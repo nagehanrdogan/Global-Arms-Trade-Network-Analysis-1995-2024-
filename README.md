@@ -47,3 +47,21 @@ We analyzed structural positions using **Multidimensional Scaling (MDS)** across
 * **2000:** Tight Western cluster (USA, Germany, France).
 * **2024:** Fragmentation and the emergence of independent clusters, with Turkiye moving away from the traditional NATO-dependent node toward its own niche network.
 
+## 💻 Core Logic (Python Snippets)
+
+### Binary Matrix Construction
+```python
+def build_matrix(df, year):
+    # Filter year and assign link presence
+    year_data = df[df['Delivery year'] == year].copy()
+    year_data['Link'] = 1
+    
+    # Create pivot table
+    matrix = year_data.pivot_table(index='Supplier', columns='Recipient', 
+                                   values='Link', aggfunc='max').fillna(0)
+    
+    # Ensure square matrix and zero out diagonal
+    all_actors = sorted(list(set(matrix.index) | set(matrix.columns)))
+    matrix = matrix.reindex(index=all_actors, columns=all_actors, fill_value=0)
+    np.fill_diagonal(matrix.values, 0)
+    return matrix
