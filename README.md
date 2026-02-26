@@ -1,4 +1,4 @@
-# Evolution of the Global Arms Trade Network (1995-2024)
+# Evolution of the Global Arms Trade Network (2000-2024)
 ## A Replication and Longitudinal Extension of David Kinsella's (2003) SNA Study
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
