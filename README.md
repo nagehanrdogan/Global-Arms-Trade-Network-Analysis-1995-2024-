@@ -1,67 +1,78 @@
-# Evolution of the Global Arms Trade Network (2000-2024)
-## A Replication and Longitudinal Extension of David Kinsella's (2003) SNA Study
+# Global Arms Trade Network Analysis (1995–2024)
+## A Replication and Longitudinal Extension of Kinsella (2003)
+
+**Nagehan Reyhan Doğan** | PhD Candidate, Istanbul University | 2026
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![Data](https://img.shields.io/badge/data-SIPRI-green.svg)
-![Field](https://img.shields.io/badge/field-SNA%20|%20IR-red.svg)
-
-## 📌 Project Overview
-This project performs a **Social Network Analysis (SNA)** of the global arms trade, replicating the foundational methodology of **David Kinsella (2003)**. While the original study analyzed the period of 1950-2000, this extension bridges the gap to **2024**, analyzing modern shifts like the "Manufacturer Effect" and geopolitical re-polarization.
+![Field](https://img.shields.io/badge/field-SNA%20%7C%20IR-red.svg)
 
 ---
 
-## 🛠 Methodology
-The analysis is based on **Binary Adjacency Matrices** ($N \times N$) where:
-* **Nodes ($g$):** Participating states in the arms trade.
-* **Edges ($L$):** $x_{ij} = 1$ if a major conventional weapon transfer exists from supplier $i$ to recipient $j$, and $0$ otherwise.
-* **Density Formula:** $D = \frac{L}{g(g-1)}$.
-
-### Data Source
-* **Database:** SIPRI Arms Transfers Database (Trade Registers).
-* **Scope:** Major Conventional Weapons (TIV values > 0).
+## Research Question
+How has the structure of the global arms trade network evolved 
+between 1995 and 2024? This project replicates the foundational 
+SNA methodology of Kinsella (2003) and extends it to the present, 
+examining shifts in network density, structural equivalence, and 
+the emergence of new supplier clusters.
 
 ---
 
-## 📊 Key Findings
+## Data
+This project uses the **SIPRI Arms Transfers Database**.  
+Data is **not included** in this repository due to licensing restrictions.
 
-### 1. Global Network Density
-The analysis shows that global network density remains low and stable (approx. **0.025**), confirming that arms trade is not a free market but an **embedded social network** based on strategic trust.
+**To download the data:**
+1. Go to: https://armstransfers.sipri.org/ArmsTransfer/TransferRegister
+2. Settings: Year 1995–2025 | Order by Buyer
+3. Check: ✓ Register with deliveries broken down by year
+4. Click **Download as CSV**
+5. Save as `trade-register.csv` in the same folder as the notebook
+
+---
+
+## Methodology
+Binary Adjacency Matrices (N × N) where:
+- **Nodes:** Participating states
+- **Edges:** x_ij = 1 if a transfer exists from supplier i to recipient j
+- **Density:** D = L / g(g-1)
+- **Structural equivalence** via Multidimensional Scaling (MDS)
+
+---
+
+## Key Findings
 
 | Metric | 2000 (Kinsella Baseline) | 2024 (Extension) |
-| :--- | :--- | :--- |
-| **Countries ($g$)** | 119 | 119 |
-| **Connections ($L$)** | 317 | 383 |
-| **Density ($D$)** | 0.0225 | 0.0272 |
+|--------|--------------------------|------------------|
+| Countries (g) | 119 | 119 |
+| Connections (L) | 317 | 383 |
+| Density (D) | 0.0225 | 0.0272 |
 
-### 2. The Turkiye Case: Strategic Decoupling & Autonomy
-A deep dive into Turkiye's structural position reveals a historic transformation:
-* **Supplier Diversity (Indegree):** Dropped from **9** unique suppliers in 2012 to **4** in 2024.
-* **Export Reach (Outdegree):** Rose from **2** destinations (2000) to **25** destinations (2024).
-* **Manufacturer Effect:** The decline in supplier diversity is a direct result of **Import Substitution**, as Turkiye transitioned from a dependent recipient to a strategic supplier.
+Global network density remains low and stable (~0.025), confirming 
+that arms trade operates as an embedded social network based on 
+strategic trust rather than a free market.
+
+**Turkiye case:** Supplier diversity dropped from 9 (2012) to 4 (2024) 
+while export reach rose from 2 to 25 destinations — consistent with 
+import substitution and the "Manufacturer Effect."
 
 ---
 
-## 🗺 Structural Equivalence (MDS Analysis)
-We analyzed structural positions using **Multidimensional Scaling (MDS)** across four panels: **2000, 2008, 2016, and 2024**. 
+## Requirements
+pip install pandas numpy networkx matplotlib scipy
 
-* **2000:** Tight Western cluster (USA, Germany, France).
-* **2024:** Fragmentation and the emergence of independent clusters, with Turkiye moving away from the traditional NATO-dependent node toward its own niche network.
+## Usage
+Open the notebook and run cells in order.  
+Outputs are saved to the `outputs/` folder.
 
-## 💻 Core Logic (Python Snippets)
+---
 
-### Binary Matrix Construction
-```python
-def build_matrix(df, year):
-    # Filter year and assign link presence
-    year_data = df[df['Delivery year'] == year].copy()
-    year_data['Link'] = 1
-    
-    # Create pivot table
-    matrix = year_data.pivot_table(index='Supplier', columns='Recipient', 
-                                   values='Link', aggfunc='max').fillna(0)
-    
-    # Ensure square matrix and zero out diagonal
-    all_actors = sorted(list(set(matrix.index) | set(matrix.columns)))
-    matrix = matrix.reindex(index=all_actors, columns=all_actors, fill_value=0)
-    np.fill_diagonal(matrix.values, 0)
-    return matrix
+## Reference
+Kinsella, D. (2003). Changing structure of the arms trade: 
+A social network analysis. *Annual Meeting of the American 
+Political Science Association*, Philadelphia.
+
+## Citation
+Doğan, N. R. (2026). *Global Arms Trade Network Analysis 
+(1995–2024)*. Unpublished working paper, Istanbul University.  
+https://github.com/nagehanrdogan/Global-Arms-Trade-Network-Analysis-1995-2024-
