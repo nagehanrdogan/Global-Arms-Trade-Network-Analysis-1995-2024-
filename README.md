@@ -1,6 +1,4 @@
-# Global Arms Trade Network Analysis (2000–2024)
-## A Replication and Longitudinal Extension of Kinsella (2003)
-
+# A Replication and Longitudinal Extension of Kinsella (1995-2024)
 **Nagehan Reyhan Doğan** | PhD Candidate, Istanbul University | 2026
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
