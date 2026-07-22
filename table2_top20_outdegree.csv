@@ -1,0 +1,101 @@
+year,rank,supplier,out_degree_centrality
+2005,1,United States,0.385
+2005,2,Germany,0.239
+2005,3,France,0.231
+2005,4,Russia,0.214
+2005,5,United Kingdom,0.197
+2005,6,Italy,0.188
+2005,7,Israel,0.188
+2005,8,Ukraine,0.128
+2005,9,Canada,0.111
+2005,10,Sweden,0.111
+2005,11,Netherlands,0.111
+2005,12,China,0.103
+2005,13,South Africa,0.068
+2005,14,unknown supplier(s),0.051
+2005,15,Spain,0.043
+2005,16,Czechia,0.043
+2005,17,Switzerland,0.043
+2005,18,Turkiye,0.034
+2005,19,Belarus,0.026
+2005,20,South Korea,0.026
+2010,1,United States,0.425
+2010,2,Russia,0.291
+2010,3,France,0.276
+2010,4,Germany,0.252
+2010,5,Italy,0.228
+2010,6,Israel,0.22
+2010,7,China,0.197
+2010,8,Sweden,0.142
+2010,9,United Kingdom,0.126
+2010,10,Ukraine,0.126
+2010,11,South Africa,0.118
+2010,12,Canada,0.11
+2010,13,Netherlands,0.094
+2010,14,Austria,0.079
+2010,15,Switzerland,0.079
+2010,16,Spain,0.071
+2010,17,Belarus,0.039
+2010,18,Brazil,0.039
+2010,19,Turkiye,0.039
+2010,20,unknown supplier(s),0.039
+2015,1,United States,0.511
+2015,2,France,0.321
+2015,3,Germany,0.275
+2015,4,Russia,0.229
+2015,5,Italy,0.221
+2015,6,Israel,0.183
+2015,7,China,0.168
+2015,8,Netherlands,0.168
+2015,9,Canada,0.145
+2015,10,United Kingdom,0.13
+2015,11,Spain,0.115
+2015,12,Sweden,0.099
+2015,13,Ukraine,0.092
+2015,14,Switzerland,0.092
+2015,15,South Africa,0.092
+2015,16,United Arab Emirates,0.061
+2015,17,Czechia,0.061
+2015,18,Turkiye,0.061
+2015,19,Bulgaria,0.053
+2015,20,unknown supplier(s),0.053
+2020,1,United States,0.561
+2020,2,France,0.276
+2020,3,Germany,0.252
+2020,4,Russia,0.179
+2020,5,Israel,0.163
+2020,6,United Kingdom,0.154
+2020,7,Italy,0.138
+2020,8,South Korea,0.122
+2020,9,China,0.106
+2020,10,Spain,0.106
+2020,11,South Africa,0.106
+2020,12,Turkiye,0.098
+2020,13,Sweden,0.089
+2020,14,Canada,0.081
+2020,15,Netherlands,0.081
+2020,16,United Arab Emirates,0.065
+2020,17,Ukraine,0.057
+2020,18,Switzerland,0.057
+2020,19,Norway,0.049
+2020,20,Australia,0.041
+2025,1,United States,0.563
+2025,2,France,0.277
+2025,3,Germany,0.261
+2025,4,Israel,0.235
+2025,5,Italy,0.21
+2025,6,Turkiye,0.168
+2025,7,United Kingdom,0.134
+2025,8,Sweden,0.126
+2025,9,Canada,0.118
+2025,10,China,0.109
+2025,11,South Korea,0.101
+2025,12,Russia,0.092
+2025,13,United Arab Emirates,0.067
+2025,14,Norway,0.067
+2025,15,Netherlands,0.067
+2025,16,Spain,0.059
+2025,17,Poland,0.059
+2025,18,South Africa,0.059
+2025,19,Czechia,0.05
+2025,20,Finland,0.05
