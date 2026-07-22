@@ -1,2 +1,5 @@
-trade-register.csv
-*.csv
+data/raw/*
+!data/raw/.gitkeep
+__pycache__/
+*.pyc
+.DS_Store
